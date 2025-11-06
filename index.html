@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Seagulls — All about gulls</title>
+    <meta name="description" content="A short, accessible webpage about seagulls (common gulls), their behavior, habitat, and tips for coexistence." />
+    <style>
+        :root{
+            --bg:#f7fbff; --card:#fff; --muted:#556; --accent:#0b76ff;
+            --radius:10px; --maxw:1100px;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+            background:linear-gradient(180deg,var(--bg),#eef6ff); color:var(--muted);
+            -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+        }
+        .wrap{max-width:var(--maxw); margin:32px auto; padding:20px;}
+        header{
+            display:flex; gap:18px; align-items:center; margin-bottom:18px;
+        }
+        .logo{
+            width:84px; height:84px; border-radius:14px; overflow:hidden; flex:0 0 84px;
+            box-shadow:0 6px 18px rgba(11,118,255,0.12);
+        }
+        .logo img{width:100%;height:100%;object-fit:cover;display:block}
+        h1{margin:0;font-size:clamp(20px,4vw,28px);color:#083153}
+        p.lead{margin:6px 0 0;color:#284a6a}
+        main{display:grid; grid-template-columns:1fr 340px; gap:20px; align-items:start}
+        @media (max-width:880px){ main{grid-template-columns:1fr} .sidebar{order:2}}
+        article.card, aside.card{background:var(--card); padding:18px; border-radius:var(--radius);
+            box-shadow:0 6px 18px rgba(20,40,70,0.06)}
+        article.card h2{margin-top:0;color:#0b3a5e}
+        .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0 18px}
+        .fact{background:#f1f8ff;padding:10px;border-radius:8px;text-align:center;font-size:14px;color:#063a63}
+        @media (max-width:560px){.facts{grid-template-columns:repeat(2,1fr)}}
+        .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+        .gallery img{width:100%;height:110px;object-fit:cover;border-radius:8px}
+        .tips{list-style:none;padding:0;margin:10px 0 0}
+        .tips li{padding:8px 0;border-top:1px dashed #e6f0ff;color:#193a57}
+        footer{margin-top:18px;font-size:13px;color:#48607a}
+        .muted{color:#688; font-size:14px}
+        .audio{display:flex;gap:8px;align-items:center;margin-top:10px}
+        .btn{
+            display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;
+            font-weight:600;font-size:14px;box-shadow:0 6px 16px rgba(11,118,255,0.18)
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="logo" aria-hidden="true">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Seagull_on_Blackpool.jpg" alt="">
+            </div>
+            <div>
+                <h1>Seagulls (Gulls) — quick guide</h1>
+                <p class="lead">Facts, behavior, and simple tips for coexisting with gulls on coasts and in cities.</p>
+            </div>
+        </header>
+
+        <main>
+            <article class="card" aria-labelledby="about">
+                <h2 id="about">About seagulls</h2>
+                <p class="muted">"Seagull" is a common name for many gull species in the family Laridae. Gulls are adaptable, opportunistic birds often found near water and human settlements.</p>
+
+                <div class="facts" aria-hidden="false">
+                    <div class="fact"><strong>Family</strong><div>Laridae</div></div>
+                    <div class="fact"><strong>Diet</strong><div>Omnivore/scavenger</div></div>
+                    <div class="fact"><strong>Range</strong><div>Worldwide (coasts, inland)</div></div>
+                </div>
+
+                <h3>Key behaviors</h3>
+                <ul>
+                    <li>Social: nest in colonies and often feed in groups.</li>
+                    <li>Intelligent: use tools, drop shellfish on rocks to break them, learn to follow humans for food.</li>
+                    <li>Vocal: loud, distinctive calls used for communication and alarm.</li>
+                </ul>
+
+                <h3>Gallery</h3>
+                <div class="gallery" role="list">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Black-headed_gull_%28Larus_ridibundus%29_%281%29.jpg" alt="Black-headed gull standing">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Larus_argentatus_-_Canada_%281%29.jpg" alt="Herring gull flying">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Larus_marina_-_Gull.jpg" alt="Gull perched on rock">
+                </div>
+
+                <h3 style="margin-top:14px">Quick tips for coexistence</h3>
+                <ul class="tips" aria-label="tips">
+                    <li>Avoid leaving food out: secure bins and pack meals away promptly.</li>
+                    <li>Do not feed gulls deliberately — it encourages bold behavior and dependency.</li>
+                    <li>Protect eggs and nests: give nesting colonies space during breeding season.</li>
+                </ul>
+
+                <div style="margin-top:16px">
+                    <a class="btn" href="#more" title="Learn more">Learn more</a>
+                </div>
+            </article>
+
+            <aside class="card sidebar" id="more" aria-labelledby="sidebarTitle">
+                <h2 id="sidebarTitle">Quick facts & sounds</h2>
+                <p class="muted">Short sound example and conservation notes.</p>
+
+                <div class="audio">
+                    <audio controls preload="none" aria-label="Seagull call">
+                        <source src="https://upload.wikimedia.org/wikipedia/commons/3/36/Larus_argentatus_call.ogg" type="audio/ogg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <h4 style="margin-top:12px">Conservation</h4>
+                <p class="muted">Some gulls thrive near humans; others are declining due to habitat loss and changing fisheries. Support local conservation programs and avoid disturbing nesting sites.</p>
+
+                <h4 style="margin-top:12px">Identification tips</h4>
+                <p class="muted">Look at size, bill shape, leg color, and wing pattern. Juveniles often look very different from adults.</p>
+
+                <footer>
+                    Source suggestions: Wikimedia Commons, Bird field guides. This page is an informational primer, not a substitute for local wildlife advice.
+                </footer>
+            </aside>
+        </main>
+    </div>
+</body>
+</html>
